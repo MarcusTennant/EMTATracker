@@ -15,8 +15,8 @@ Also provided in this repo is a test loop (demoWebpage.html) of gps data pulled 
 
 As this was a prototype proof of concept, going from initial design to completed implementation in about 8 weeks, much of the code could use some refactoring. However we succesfully completed our goals. The project was showcased at an Erie County Metropolitan Planning Committee Meeting, as well as to members of EMTA and the Pennsylvania DOT in August 2013.
 
-Android
+Mobile View            
 ![screenshot](./AndroidTest.jpg)
 
-Desktop
+Desktop View
 ![screenshot](./DesktopTest.jpg)
