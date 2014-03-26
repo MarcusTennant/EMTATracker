@@ -11,7 +11,7 @@ Designed with three goals in mind (ability to be used virtually anywhere in the 
 
 The front end is designed for both desktop and mobile in Javascript and HTML5 so no app installation is needed. 
 
-Also provided in this repo is a test loop of gps data pulled from our arduino of a drive around Penn State Behrend.
+Also provided in this repo is a test loop (demoWebpage.html) of gps data pulled from our arduino of a drive around Penn State Behrend.
 
 Android
 ![screenshot](./AndroidTest.jpg)
