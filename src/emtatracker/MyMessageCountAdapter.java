@@ -18,7 +18,7 @@ import javax.mail.event.MessageCountEvent;
 
 /**
  *
- * @author mms5303
+ * @author Matt Smith and Marcus Tennant
  */
 public class MyMessageCountAdapter extends MessageCountAdapter{
     String output;
