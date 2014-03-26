@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 80% }
+	  
+#container {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+}
+
+#bottom, 
+#infonextstop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#infonextstop {
+	position: absolute;
+	top: 45%;
+	left: 35%;
+    z-index: 10;
+}
+
+#infocurrtime {
+	position: absolute;
+	top: 45%;
+	left: 12%;
+    z-index: 10;
+}
+
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdzzL7pzTPATw4DQVr99WXnMlHLQvSErE&sensor=false">
+    </script>
+	
+	
+	
+    <script type="text/javascript">
+function init(){ //user agent testing stuff, for the demo the test function gets loaded and immediately calls initialize2 where it begins the infinite loop
+
+var userAgent = navigator.userAgent.toLowerCase();
+var android = userAgent.indexOf("android");
+//var ie = userAgent.indexOf("msie");
+
+//if (userAgent.indexof("iphone") > -1 || userAgent.indexof("ipod") > -1 || userAgent.indexof("ipad") > -1 || userAgent.indexof("android") > -1);
+if (android >= 0)
+	startMOB(); //ANDROID
+else
+	startDesktop(); //DESKTOP
+
+};
+
+
+function start() {
+
+  var userAgent = navigator.userAgent.toLowerCase();
+  var android = userAgent.indexOf("android");
+  var zoomSize;
+  
+  if (android >= 0)
+		zoomSize = 15;
+  else
+		zoomSize = 16;
+	
+  var busTime;
+  var lat;
+  var lng;
+  var refreshRate = 1500;
+  var route = 'BehrendBus.png';
+  var pos = new google.maps.LatLng(42.12324, -79.98089);
+  
+  
+  var mapOptions = {
+    zoom: zoomSize,
+    center: new google.maps.LatLng(42.11973, -79.98150),
+	disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };  
+
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+	  
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map,
+    icon: route
+  });
+
+	var nextStop = "Burke";
+
+	function myLoop () {           
+		setTimeout(function () {    
+
+			
+			
+			var currTime = new Date();
+			var currHour = currTime.getHours();
+			var currMinute = currTime.getMinutes();
+			
+			var mostRecentUpdate = PullLocationString(); //calls PullLocationString() which loads the first string from data.html
+		
+			busTime = mostRecentUpdate.substr(0,8); //used for our purposes to check latency
+			lat = (mostRecentUpdate.substr(9,2)/1 + mostRecentUpdate.substr(12,7)/60).toFixed(5);
+			lng = -(mostRecentUpdate.substr(19,2)/1 + mostRecentUpdate.substr(21,7)/60).toFixed(5);
+			nextStop = mostRecentUpdate.substr(29);
+			
+			marker.setPosition( new google.maps.LatLng( lat, lng));
+			
+			
+			var timeInfoBox = document.getElementById("infocurrtime");
+			var nextStopInfoBox = document.getElementById("infonextstop");
+			
+			timeInfoBox.style.fontSize = 28 + 'px';
+			nextStopInfoBox.style.fontSize = 28 + 'px';
+			
+			nextStopInfoBox.innerHTML = (nextStop);	
+			
+			if (currHour == 0)
+				currHour = 12;
+				
+			if (currHour > 12) 
+				currHour = currHour - 12;						
+				
+			if (currMinute >= 10)
+				timeInfoBox.innerHTML = ( currHour + ":" + currMinute);
+
+			else
+				timeInfoBox.innerHTML = (currHour + ":0" + currMinute);
+				
+				marker.setIcon(route); //horrible only use in demo with repeated coords
+				
+				
+				
+			myLoop();            
+
+	}, refreshRate)
+}
+myLoop();                      
+}
+
+function PullLocationString(){
+    var req = new XMLHttpRequest();
+    req.open('GET', 'data.html', false);    
+    req.send(null);
+	
+    var allLines = req.responseText.split("\n");
+	return allLines[0]; //returns first (most recent) coordinates
+}
+
+google.maps.event.addDomListener(window, 'load', start);
+    </script>
+  </head>
+  <body>
+   <div id="map-canvas"></div>
+<div id="container">
+    <div id="bottom"><img src = 'newInfoBarEdit.png' height =100% width=100% /></div>
+    <div id="infonextstop"><img src = 'http://i.imgur.com/D6ZmfxG.png'  height="20" width="32" /></div>
+	<div id="infocurrtime"><img src = 'http://i.imgur.com/D6ZmfxG.png'  height="20" width="32" /></div>
+</div>
+  </body>
+  
+</html>
