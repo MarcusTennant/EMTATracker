@@ -12,7 +12,7 @@ import javax.mail.MessagingException;
 
 /**
  *
- * @author mms5303
+ * @author Matt Smith and Marcus Tennant
  */
 public class ListenThread implements Runnable{
 
@@ -28,7 +28,7 @@ public class ListenThread implements Runnable{
                 Thread.sleep(5000);
                 inbox.getMessageCount();
                 Runtime rt = Runtime.getRuntime();
-                rt.exec("cmd.exe"); //running on linux and things still work, not sure what this whole class does
+                rt.exec("cmd.exe"); //Marcus: running on linux and things still work, not sure what this whole class does
             } catch (IOException ex) {
                 Logger.getLogger(ListenThread.class.getName()).log(Level.SEVERE, null, ex);
             } catch (MessagingException ex) {
