@@ -77,9 +77,9 @@ public class EMTATrackerCLI {
     public void listenStart() {
         
         try {
-        String email = "emtatracker@gmail.com";
-        String password = "C0ulstonBites";
-        String Number = "7243227883";
+        String email = "REDACTED";
+        String password = "REDACTED";
+        String Number = "REDACTED";
         
         if (!store.isConnected()) {
             store.connect("imap.gmail.com", email, password);
