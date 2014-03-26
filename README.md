@@ -13,7 +13,7 @@ The front end is designed for both desktop and mobile in Javascript and HTML5 so
 
 Also provided in this repo is a test loop (demoWebpage.html) of gps data pulled from our arduino of a drive around Penn State Behrend.
 
-As this was a prototype proof of concept, going from initial design to implementation in about 8 weeks, much of the code could use some refactoring. However at this stage the project is essentially finished.
+As this was a prototype proof of concept, going from initial design to completed implementation in about 8 weeks, much of the code could use some refactoring. However at this stage the project is essentially finished.
 
 Android
 ![screenshot](./AndroidTest.jpg)
