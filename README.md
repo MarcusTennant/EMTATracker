@@ -2,7 +2,7 @@ EMTATracker
 ===========
 
 EMTATracker is a gps tracker that utilizes the 3g network to enable municiple vehicle tracking in virtually any city.
-Developed as a proto type for the Erie Metro Transport Authority by Jeff Knapp, Matt Smith and MArcus Tennant.
+Developed as a proto type for the Erie Metro Transport Authority by Jeff Knapp, Matt Smith and Marcus Tennant.
 
 The backend consists of a java program controlling a mail server using a google api.
 The front end pulls the data provided by the mail server and makes use of the google maps api to display the tracking data in real time.
