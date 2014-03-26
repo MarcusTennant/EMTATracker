@@ -23,7 +23,7 @@ import javax.mail.search.FromTerm;
 
 /**
  *
- * @authors Matt Smith and Marcus Tennant
+ * @author Marcus Tennant
  */
 public class EMTATrackerCLI {
     Properties propsIMAP;
