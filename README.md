@@ -13,7 +13,7 @@ The front end is designed for both desktop and mobile in Javascript and HTML5 so
 
 Also provided in this repo is a test loop (demoWebpage.html) of gps data pulled from our arduino of a drive around Penn State Behrend.
 
-As this was a prototype proof of concept, going from initial design to completed implementation in about 8 weeks, much of the code could use some refactoring. However we succesfully completed our goals, and showcased our project to the Erie County Metropolitan Planning Committee Metting, as well as to members of EMTA and the Pennsylvania DOT.
+As this was a prototype proof of concept, going from initial design to completed implementation in about 8 weeks, much of the code could use some refactoring. However we succesfully completed our goals. The project was showcased at an Erie County Metropolitan Planning Committee Meeting, as well as to members of EMTA and the Pennsylvania DOT in August 2013.
 
 Android
 ![screenshot](./AndroidTest.jpg)
