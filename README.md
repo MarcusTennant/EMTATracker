@@ -11,7 +11,7 @@ Designed with three goals in mind (ability to be used virtually anywhere in the 
 
 The front end is designed for both desktop and mobile in Javascript and HTML5 so no app installation is needed. 
 
-Also provided in this repo is a test loop [demoWebpage.html](./demoWebpage.html) of gps data pulled from our arduino of a drive around Penn State Behrend.
+Also provided in this repo is a test loop [demoWebpage.html](./demoWebpage.html) of gps data pulled from our arduino of a drive around Penn State Behrend. As well as the actual [webpage](./webpage.html) which pulled live bus data from the server.
 
 The project was showcased at an Erie County Metropolitan Planning Committee Meeting, as well as to members of EMTA and the Pennsylvania DOT in August 2013.
 
